@@ -1,0 +1,13 @@
+.DS_Store
+*.swp
+node_modules/
+target/
+build/
+dist/
+.docusaurus/
+*.deb
+*.img
+*.img.xz
+*.tar.zst
+.env
+tmp/

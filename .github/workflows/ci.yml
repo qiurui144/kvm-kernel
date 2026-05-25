@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build inside kvm-build-env
+        run: |
+          # Pull image once kvm-build-env is published
+          # docker pull qiurui144/kvm-build-env:latest
+          # docker run --rm -v "$PWD:/work" -w /work qiurui144/kvm-build-env:latest make build
+          echo "TODO: enable when kvm-build-env image is published"
+          test -f README.md && test -f LICENSE
+      - name: License lint
+        run: |
+          grep -q "Copyright" LICENSE
+          grep -q "License" LICENSE
